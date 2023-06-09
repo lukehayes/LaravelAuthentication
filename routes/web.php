@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,7 @@ Route::get(
     [PageController::class, 'login'])
     ->name('login');
 
+Route::post(
+    '/authenticate',
+    [LoginController::class, 'authenticate'])
+    ->name('authenticate');
