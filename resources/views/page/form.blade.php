@@ -6,7 +6,7 @@
     <form method="POST" action="{{route('authenticate')}}">
         {{csrf_field()}}
         <input type="text" name="username" placeholder='username'>
-        <input type="password" name="password" placeholder='username'>
+        <input type="password" name="password" placeholder='password'>
         <input type="submit" value='login'>
     </form>
 @endsection
