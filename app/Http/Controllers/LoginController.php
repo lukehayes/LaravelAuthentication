@@ -9,12 +9,20 @@ class LoginController extends Controller
 {
     public function authenticate(Request $request)
     {
-        // TODO Implement manual authentication.
         $credentials = $request->validate([
             'username' => ['required', 'email'],
             'password' => ['required']
         ]);
 
-        dd(Auth::attempt($credentials));
+        if(Auth::attempt($credentials))
+        {
+            $request->session()->regenerate();
+            return redirect()->intended('home');
+        }
+
+        return back()->withErrors([
+            'email' => 'Email error.',
+            'password' => 'Password error.'
+        ]);
     }
 }
