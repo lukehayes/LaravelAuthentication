@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,12 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| Pages
+|--------------------------------------------------------------------------
+|
+*/
 Route::get(
     '/',
     [PageController::class, 'index'])
@@ -25,7 +32,25 @@ Route::get(
     [PageController::class, 'login'])
     ->name('login');
 
+/*
+|--------------------------------------------------------------------------
+| Authentication
+|--------------------------------------------------------------------------
+|
+*/
 Route::post(
     '/authenticate',
     [LoginController::class, 'authenticate'])
     ->name('authenticate');
+
+/*
+|--------------------------------------------------------------------------
+| Dashboard
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get(
+    '/dashboard',
+    [DashboardController::class, 'index'])
+    ->name('dashboard');
