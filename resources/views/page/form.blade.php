@@ -3,6 +3,9 @@
 @section('login', 'Page Title')
 
 @section('content')
+
+    {{ $errors }}
+
     <form method="POST" action="{{route('authenticate')}}">
         {{csrf_field()}}
         <input type="text" name="username" placeholder='username'>
