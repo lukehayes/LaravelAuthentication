@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::get(
     [PageController::class, 'login'])
     ->name('login');
 
+
 /*
 |--------------------------------------------------------------------------
 | Authentication
@@ -55,3 +57,14 @@ Route::get(
     [DashboardController::class, 'index'])
     ->middleware('auth.basic')
     ->name('dashboard');
+
+/*
+|--------------------------------------------------------------------------
+| Users (for debugging)
+|--------------------------------------------------------------------------
+|
+*/
+Route::get(
+    '/users',
+    [UserController::class, 'index'])
+    ->name('users');
