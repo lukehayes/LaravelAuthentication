@@ -53,5 +53,5 @@ Route::post(
 Route::get(
     '/dashboard',
     [DashboardController::class, 'index'])
-    ->middleware('auth.basic')
+    ->middleware('auth')
     ->name('dashboard');
