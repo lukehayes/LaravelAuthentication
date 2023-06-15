@@ -8,6 +8,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        dd(__METHOD__);
+        return view('dashboard.index');
     }
 }
