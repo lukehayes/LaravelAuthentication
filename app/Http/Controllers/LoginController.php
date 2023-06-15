@@ -22,8 +22,8 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Email error.',
-            'password' => 'Password error.'
+            'username' => 'That username could not be found.',
+            'password' => 'That password looks like it is incorrect.'
         ]);
     }
 }

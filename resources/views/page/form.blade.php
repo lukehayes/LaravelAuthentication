@@ -4,7 +4,13 @@
 
 @section('content')
 
-    {{ $errors }}
+    @if($errors->any())
+        <div id="form-errors">
+        @foreach($errors->all() as $error)
+            <p class='form-error'>{{$error}}</p>
+        @endforeach
+        </div>
+    @endif
 
     <form method="POST" action="{{route('authenticate')}}">
         {{csrf_field()}}
