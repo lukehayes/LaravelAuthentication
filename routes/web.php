@@ -43,6 +43,11 @@ Route::post(
     [LoginController::class, 'authenticate'])
     ->name('authenticate');
 
+Route::get(
+    '/logout',
+    [LoginController::class, 'logout'])
+    ->name('logout');
+
 /*
 |--------------------------------------------------------------------------
 | Dashboard

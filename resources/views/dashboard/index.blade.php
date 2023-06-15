@@ -4,4 +4,5 @@
 
 @section('content')
     <p>Dashboard</p>
+    <a href="{{ route('logout')}}">Logout</a>
 @endsection

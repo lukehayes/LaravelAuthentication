@@ -26,4 +26,15 @@ class LoginController extends Controller
             'password' => 'That password looks like it is incorrect.'
         ]);
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }
